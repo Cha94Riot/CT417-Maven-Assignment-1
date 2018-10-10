@@ -26,8 +26,7 @@ public class Student {
     public Student(String name, int day, int month, int year){
         this.name = name;
         this.DOB = new DateTime(year, month, day, 0, 0);
-        this.age = setAge();
-        //this.username = setUsername();
+        this.age = setAge();        
     }
 
     //Sets the age of the student based on the entered Date of Birth and todays date
@@ -37,13 +36,13 @@ public class Student {
         return now.getYear();
     }
 
-    //Gets the username by concatinating Students name and age
+    //Gets the username by concatenating Students name and age
     public String getUsername() {
         String username = this.name + Integer.toString(this.age);        
         return username;
     }
     
-    public void addModule(List<String> moduleID){
-        modules.add(moduleID);
+    public void addModule(String moduleName, String moduleID){
+        modules.add(new Module(moduleName, moduleID));
     }
 }

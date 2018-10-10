@@ -19,8 +19,6 @@ public class NewClass {
     public static void main(String args[]){
         List<CourseProgramme> courseList = new ArrayList<CourseProgramme>();
         courseList.add(new CourseProgramme("CS & IT", 2018, 12, 12));
-        courseList.add(new CourseProgramme("Science", 2018, 12, 12));
-        courseList.add(new CourseProgramme("Economics", 2018, 12, 12));
         courseList.add(new CourseProgramme("Engineering", 2018, 12, 12));
     }
 }
