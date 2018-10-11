@@ -19,14 +19,16 @@ public class Student {
     private DateTime DOB;
     private int ID;
     private String username;
-    private String courses;
+    private String course;
     private List<Module> modules = new ArrayList<Module>();
  
     //Constructor
-    public Student(String name, int day, int month, int year){
+    public Student(String name, int day, int month, int year, String course){
         this.name = name;
         this.DOB = new DateTime(year, month, day, 0, 0);
-        this.age = setAge();        
+        this.age = setAge();
+        this.course = course;
+        setModules(course);
     }
 
     //Sets the age of the student based on the entered Date of Birth and todays date
@@ -44,5 +46,9 @@ public class Student {
     
     public void addModule(String moduleName, String moduleID){
         modules.add(new Module(moduleName, moduleID));
+    }
+
+    private void setModules(String course) {
+        
     }
 }

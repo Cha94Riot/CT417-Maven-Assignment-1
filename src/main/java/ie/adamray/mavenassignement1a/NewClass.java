@@ -14,11 +14,13 @@ import java.util.List;
  */
 public class NewClass {
     
-    public static List courseList;
-    
     public static void main(String args[]){
-        List<CourseProgramme> courseList = new ArrayList<CourseProgramme>();
-        courseList.add(new CourseProgramme("CS & IT", 2018, 12, 12));
-        courseList.add(new CourseProgramme("Engineering", 2018, 12, 12));
+        CourseProgramme CS = new CourseProgramme("BCT1", 2018, 12, 12);
+        CourseProgramme engineering = new CourseProgramme("ENG1", 2018, 12, 12);
+        
+        Module CT1 = new Module("Programming", "CT1");
+        CS.addModules(CT1);
+        
+        Student Adam = new Student("Adam", 18, 11, 1994, "BCT1");
     }
 }

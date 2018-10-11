@@ -25,4 +25,10 @@ public class CourseProgramme {
         this.startDate = new DateTime(startYear, startMonth, startDay, 0, 0);;
         this.endDate = new DateTime(startYear, startYear, startYear, 59, 59);;
     }
+    
+    public void addModules(Module module){
+        this.modules.add(module);
+        module.addCourse(courseName);
+        
+    }
 }

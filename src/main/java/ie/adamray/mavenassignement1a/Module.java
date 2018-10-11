@@ -16,13 +16,16 @@ public class Module {
     private String moduleName;
     private String moduleID;
     private List<Student> students = new ArrayList<Student>();
-    private List<CourseProgramme> courses = new ArrayList<CourseProgramme>();
+    private List<String> courses = new ArrayList<String>();
     
     //Constructor
     public Module(String moduleName, String moduleID){
         this.moduleName = moduleName;
         this.moduleID = moduleID;
     }
-    
+
+    void addCourse(String courseName) {
+        this.courses.add(courseName);
+    }
     
 }
