@@ -17,38 +17,46 @@ public class Student {
     private String name;
     private int age;
     private DateTime DOB;
-    private int ID;
     private String username;
-    private String course;
+    private CourseProgramme course;
     private List<Module> modules = new ArrayList<Module>();
  
-    //Constructor
-    public Student(String name, int day, int month, int year, String course){
+    // Constructor
+    public Student(String name, int day, int month, int year, CourseProgramme course){
         this.name = name;
         this.DOB = new DateTime(year, month, day, 0, 0);
         this.age = setAge();
+        setUsername();
         this.course = course;
-        setModules(course);
+        registerCourse();
     }
 
-    //Sets the age of the student based on the entered Date of Birth and todays date
+    // Sets the age of the student based on the entered Date of Birth and todays date
     private int setAge() {
         DateTime now = new DateTime();
-        now = DOB.minusYears(now.getYear());
+        now = DOB.minus(now.getYear());
         return now.getYear();
     }
 
-    //Gets the username by concatenating Students name and age
-    public String getUsername() {
-        String username = this.name + Integer.toString(this.age);        
-        return username;
+    // Sets the username by concatenating Students name and age
+    public void setUsername() {
+        this.username = this.name + Integer.toString(this.age);
     }
     
-    public void addModule(String moduleName, String moduleID){
-        modules.add(new Module(moduleName, moduleID));
+        private void registerCourse() {
+        modules = this.course.getModuleList();
+        this.course.addStudentCourse(this); 
     }
-
-    private void setModules(String course) {
-        
+     
+    // Getter method for student name
+    public String getStudentName(){
+        return name;
     }
+    public int getAge(){
+        return age;
+    }
+    // Getter method to give Student Username
+    public String getUsername() {
+        return username;
+    }    
 }
