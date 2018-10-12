@@ -21,10 +21,10 @@ public class CourseProgramme {
     private DateTime endDate;
     
     // Constructor adding Course Code, Start and End Dates
-    public CourseProgramme(String courseCode, int startYear, int startMonth, int startDay){
+    public CourseProgramme(String courseCode, int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear){
         this.courseCode = courseCode;
         this.startDate = new DateTime(startYear, startMonth, startDay, 0, 0);;
-        this.endDate = new DateTime(startYear, startYear, startYear, 23, 23);;
+        this.endDate = new DateTime(endYear, endMonth, endDay, 0, 0);;
     }
     
     // Setter method to add a module to this Course's module list

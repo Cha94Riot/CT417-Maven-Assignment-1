@@ -26,7 +26,6 @@ public class Student {
         this.name = name;
         this.DOB = new DateTime(year, month, day, 0, 0);
         this.age = setAge();
-        setUsername();
         this.course = course;
         registerCourse();
     }
@@ -34,14 +33,15 @@ public class Student {
     // Sets the age of the student based on the entered Date of Birth and todays date
     private int setAge() {
         DateTime now = new DateTime();
-        now = DOB.minus(now.getYear());
+        now = DOB.minusYears(now.getYear());
         return now.getYear();
     }
 
     // Sets the username by concatenating Students name and age
-    public void setUsername() {
-        this.username = this.name + Integer.toString(this.age);
-    }
+    public String getUsername() {
+        username = name + Integer.toString(age);
+        return username;
+    } 
     
         private void registerCourse() {
         modules = this.course.getModuleList();
@@ -52,11 +52,20 @@ public class Student {
     public String getStudentName(){
         return name;
     }
+    // Getter method for Student age
     public int getAge(){
         return age;
     }
-    // Getter method to give Student Username
-    public String getUsername() {
-        return username;
-    }    
+    // Getter method for Student Date of Birth
+    public DateTime getDOB(){
+        return DOB;
+    }
+    // Getter method for Course student is in
+    public CourseProgramme getCourse(){
+        return course;
+    }
+    // Getter method for Modules student is registered for
+    public List<Module> getModules(){
+        return modules;
+    }
 }
