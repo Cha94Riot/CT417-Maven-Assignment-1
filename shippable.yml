@@ -8,7 +8,7 @@ build:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     
-    - mvn clean cobertura:cobertura
+    #- mvn clean cobertura:cobertura
     - mvn test
 
 notifications:
